@@ -1,3 +1,3 @@
-displayName = PengaelusMod
+displayName = Pengaelus Mod
 author = Tux Penguin
-version = 1.0
+version = 0.1
