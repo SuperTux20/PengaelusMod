@@ -1,0 +1,3 @@
+displayName = PengaelusMod
+author = Tux Penguin
+version = 1.0
