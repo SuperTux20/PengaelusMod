@@ -36,7 +36,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 			recipe.AddIngredient(ItemID.TerraBlade, 1);
 			recipe.AddIngredient(ItemID.MythrilBar, 10);
 			recipe.AddIngredient(ItemID.Emerald, 10);
-			recipe.AddTile(TileID.Anvil);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
