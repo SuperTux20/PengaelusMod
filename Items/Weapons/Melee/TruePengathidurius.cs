@@ -1,56 +1,57 @@
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace PengaelusMod.Items.Weapons.Melee {
 	public class TruePengathidurius : ModItem {
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("True Pengathidurius");
-			Tooltip.SetDefault("Rains down swords, Right Click for different swords");
+			// DisplayName.SetDefault("True Pengathidurius");
+			// Tooltip.SetDefault("Rains down swords, Right Click for different swords");
 		}
 
 		public override void SetDefaults() {
-			item.damage = 270;
-			item.melee = true;
-			item.width = 64;
-			item.height = 64;
-			item.useTime = 14;
-			item.crit = 55;
-			item.useAnimation = 14;
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 7f;
-			item.value = Terraria.Item.sellPrice(0, 8, 25, 50);
-			item.rare = ItemRarityID.Red;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			Item.damage = 270;
+			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;
+			Item.width = 64;
+			Item.height = 64;
+			Item.useTime = 14;
+			Item.crit = 55;
+			Item.useAnimation = 14;
+			Item.useStyle = ItemUseStyleID.Swing;
+			Item.knockBack = 7f;
+			Item.value = Terraria.Item.sellPrice(0, 8, 25, 50);
+			Item.rare = ItemRarityID.Red;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
 		}
 		public override bool AltFunctionUse(Player player) => true;
 		public override Vector2? HoldoutOffset() => new Vector2(-10, 0);
 		public override bool CanUseItem(Player player) {
 			if (player.altFunctionUse == 2) {
-				item.useStyle = ItemUseStyleID.SwingThrow;
-				item.UseSound = SoundID.Item1;
-				item.shootSpeed = 10f;
-				item.shoot = ProjectileID.MagicMissile;
+				Item.useStyle = ItemUseStyleID.Swing;
+				Item.UseSound = SoundID.Item1;
+				Item.shootSpeed = 10f;
+				Item.shoot = ProjectileID.MagicMissile;
 			} else {
-				item.damage = 400;
-				item.melee = true;
-				Item.staff[item.type] = true;
-				item.channel = true; // Channel so that you can hold the weapon [Important]
-				item.useTime = 44;
-				item.UseSound = SoundID.Item13;
-				item.useStyle = ItemUseStyleID.HoldingOut;
-				item.shootSpeed = 14f;
-				item.useAnimation = 20;
-				item.crit = 30;
-				item.shoot = ProjectileID.DemonScythe;
+				Item.damage = 400;
+				Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;
+				Item.staff[Item.type] = true;
+				Item.channel = true; // Channel so that you can hold the weapon [Important]
+				Item.useTime = 44;
+				Item.UseSound = SoundID.Item13;
+				Item.useStyle = ItemUseStyleID.Shoot;
+				Item.shootSpeed = 14f;
+				Item.useAnimation = 20;
+				Item.crit = 30;
+				Item.shoot = ProjectileID.DemonScythe;
 			}
 			return base.CanUseItem(player);
 		}
 
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
 			if (Main.myPlayer == player.whoAmI) {
 				Vector2 origVect = new Vector2(speedX, speedY);
 				for (int i = 0; i < 6; ++i) {
@@ -61,13 +62,12 @@ namespace PengaelusMod.Items.Weapons.Melee {
 			return false;
 		}
 		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Pengathidurius>(), 1);
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 10);
 			recipe.AddIngredient(ItemID.LargeEmerald, 1);
 			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }
