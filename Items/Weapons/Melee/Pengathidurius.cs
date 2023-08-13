@@ -4,13 +4,11 @@ using Terraria.ModLoader;
 namespace PengaelusMod.Items.Weapons.Melee {
 	public class Pengathidurius : ModItem {
 		public override void SetStaticDefaults() {
-			// DisplayName.SetDefault("Pengathidurius");
-			// Tooltip.SetDefault("");
 		}
 
 		public override void SetDefaults() {
 			Item.damage = 200;
-			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;
+			Item.DamageType = DamageClass.Melee;
 			Item.width = 64;
 			Item.height = 64;
 			Item.useTime = 14;

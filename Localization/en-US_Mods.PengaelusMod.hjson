@@ -1,0 +1,13 @@
+Items: {
+	Pengathidurius: {
+		DisplayName: Pengathidurius
+		Tooltip: ""
+	}
+
+	TruePengathidurius: {
+		DisplayName: True Pengathidurius
+		Tooltip: ""
+	}
+}
+
+Projectiles.Pengathitile.DisplayName: Pengathitile

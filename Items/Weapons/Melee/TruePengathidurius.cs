@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using PengaelusMod.Projectiles;
 
 namespace PengaelusMod.Items.Weapons.Melee {
 	public class TruePengathidurius : ModItem {
@@ -14,7 +15,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 
 		public override void SetDefaults() {
 			Item.damage = 270;
-			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;
+			Item.DamageType = DamageClass.Melee;
 			Item.width = 64;
 			Item.height = 64;
 			Item.useTime = 14;
@@ -42,15 +43,16 @@ namespace PengaelusMod.Items.Weapons.Melee {
 				Item.channel = true; // Channel so that you can hold the weapon [Important]
 				Item.useTime = 44;
 				Item.UseSound = SoundID.Item13;
-				Item.useStyle = ItemUseStyleID.Shoot;
+				Item.useStyle = ItemUseStyleID.Swing;
 				Item.shootSpeed = 14f;
 				Item.useAnimation = 20;
 				Item.crit = 30;
-				Item.shoot = ProjectileID.DemonScythe;
+				Item.shoot = ModContent.ProjectileType<Pengathitile>();
 			}
 			return base.CanUseItem(player);
 		}
 
+		/* some leftover code from the 1.3 version that doesn't work because speedX and speedY are undefined, and yet the weapon seems to work perfectly fine without it, but i'm leaving it in anyways for historical purposes
 		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
 			if (Main.myPlayer == player.whoAmI) {
 				Vector2 origVect = new Vector2(speedX, speedY);
@@ -61,6 +63,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 			}
 			return false;
 		}
+		*/
 		public override void AddRecipes() {
 			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Pengathidurius>(), 1);
