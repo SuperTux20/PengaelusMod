@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace PengaelusMod.Projectiles {
-	public class Pengathitile : ModProjectile {
+	public class TerraPulse : ModProjectile {
 		public override void SetStaticDefaults() {
 		}
 
@@ -19,13 +19,12 @@ namespace PengaelusMod.Projectiles {
 			Projectile.knockBack = 7f;
 			Projectile.timeLeft = 600;
 			Projectile.ignoreWater = false;
-			Projectile.tileCollide = false;
+			Projectile.tileCollide = true;
 		}
 		public override void AI() {
-			ProjectileExtras.LookAlongVelocity(this);
 			int dust = Dust.NewDust(Projectile.Center, 1, 1, DustID.TerraBlade, 0f, 0f, 0, default, 1f);
 			Main.dust[dust].velocity *= 0.25f;
-			Main.dust[dust].scale = (float)(Main.rand.Next(50,100) * 0.01);
+			Main.dust[dust].scale = (float)(Main.rand.Next(50,200) * 0.01);
 		}
 	}
 }

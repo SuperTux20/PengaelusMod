@@ -1,13 +1,53 @@
 Items: {
 	Pengathidurius: {
 		DisplayName: Pengathidurius
-		Tooltip: ""
+		Tooltip: The blade of a hero.
 	}
 
 	TruePengathidurius: {
-		DisplayName: True Pengathidurius
-		Tooltip: ""
+		DisplayName: Pengathidurius Deorum
+		Tooltip: The blade of a god.
+	}
+
+	LastPengathidurius: {
+		DisplayName: Pengathidurius Ultima
+		Tooltip: The blade of a friend.
+	}
+
+	PrimaOre: {
+		DisplayName: Primaverum Ore
+		Tooltip: Energy can be felt deep within the veins of green in this rock...
+	}
+
+	PrimaBar: {
+		DisplayName: Primaverum Bar
+		Tooltip: Arcane energy pulsates throughout this brilliant green ingot.
+	}
+
+	PrimaHeart: {
+		DisplayName: Primaverum Heart
+		Tooltip: Permanently increases maximum life by 500. (feature currently broken, just heals)
+	}
+
+	AncientHeroSword: {
+		DisplayName: Ancient Hero Sword
+		Tooltip: About time someone fixed that old thing...
+	}
+
+	HeroSword: {
+		DisplayName: Hero Sword
+		Tooltip: The lost sword of a lost hero from a lost time.
+	}
+
+	LunarHeroSword: {
+		DisplayName: Lunar Hero Sword
+		Tooltip: The Moon has blessed this lost sword with its power, don't abuse it.
 	}
 }
 
-Projectiles.Pengathitile.DisplayName: Pengathitile
+Projectiles: {
+	Pengathitile.DisplayName: Pengathidurian Beam
+	AncientProj.DisplayName: Ancient Hero Beam
+	HeroSwordBeam.DisplayName: Hero Beam
+	LunarHeroSwordBeam.DisplayName: Lunar Hero Beam
+}

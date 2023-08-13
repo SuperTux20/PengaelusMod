@@ -1,13 +1,14 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using PengaelusMod.Items.Materials;
 namespace PengaelusMod.Items.Weapons.Melee {
 	public class Pengathidurius : ModItem {
 		public override void SetStaticDefaults() {
 		}
 
 		public override void SetDefaults() {
-			Item.damage = 200;
+			Item.damage = 100;
 			Item.DamageType = DamageClass.Melee;
 			Item.width = 64;
 			Item.height = 64;
@@ -31,8 +32,8 @@ namespace PengaelusMod.Items.Weapons.Melee {
 
 		public override void AddRecipes() {
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.TerraBlade, 1);
-			recipe.AddIngredient(ItemID.MythrilBar, 10);
+			recipe.AddIngredient(ItemID.TerraBlade);
+			recipe.AddIngredient(ModContent.ItemType<PrimaBar>(), 10);
 			recipe.AddIngredient(ItemID.Emerald, 10);
 			recipe.AddTile(TileID.Anvils);
 			recipe.Register();

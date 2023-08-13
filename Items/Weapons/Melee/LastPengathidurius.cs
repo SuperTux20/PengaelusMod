@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 using PengaelusMod.Projectiles;
 
 namespace PengaelusMod.Items.Weapons.Melee {
-	public class TruePengathidurius : ModItem {
+	public class LastPengathidurius : ModItem {
 		public override void SetStaticDefaults() {
 		}
 
@@ -64,9 +64,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 		*/
 		public override void AddRecipes() {
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ModContent.ItemType<Pengathidurius>());
-			recipe.AddIngredient(ItemID.Zenith);
-			recipe.AddIngredient(ItemID.LargeEmerald);
+			recipe.AddIngredient(ModContent.ItemType<TruePengathidurius>());
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.Register();
 		}
