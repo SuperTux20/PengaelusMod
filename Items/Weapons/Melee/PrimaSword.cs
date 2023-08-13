@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using PengaelusMod.Items.Materials;
 namespace PengaelusMod.Items.Weapons.Melee {
-	public class Pengathidurius : ModItem {
+	public class PrimaSword : ModItem {
 		public override void SetStaticDefaults() {
 		}
 
@@ -32,10 +32,8 @@ namespace PengaelusMod.Items.Weapons.Melee {
 
 		public override void AddRecipes() {
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.TerraBlade);
-			recipe.AddIngredient(ModContent.ItemType<PrimaBar>(), 10);
-			recipe.AddIngredient(ItemID.Emerald, 10);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddIngredient(ModContent.ItemType<PrimaBar>(), 15);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.Register();
 		}
 	}

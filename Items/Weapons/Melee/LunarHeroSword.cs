@@ -12,8 +12,6 @@ using Terraria.ModLoader;
 namespace PengaelusMod.Items.Weapons.Melee {
 	public class LunarHeroSword : ModItem {
 		public override void SetStaticDefaults() {
-			// DisplayName.SetDefault("Lunar Hero Sword");
-			// Tooltip.SetDefault("The Moon has blessed this lost sword with it's power, don't abuse it");
 		}
 
 		public override void SetDefaults() {
@@ -25,7 +23,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 			Item.useAnimation = 17;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 15;
-			Item.value = Terraria.Item.sellPrice(1, 10, 0, 0);
+			Item.value = Item.sellPrice(1, 10, 0, 0);
 			Item.rare = 12;
 			Item.UseSound = SoundID.Item1;
 			Item.shoot = ModContent.ProjectileType<LunarHeroSwordBeam>();

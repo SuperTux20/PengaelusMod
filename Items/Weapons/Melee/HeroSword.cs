@@ -5,8 +5,6 @@ using Terraria.ModLoader;
 namespace PengaelusMod.Items.Weapons.Melee {
 	public class HeroSword : ModItem {
 		public override void SetStaticDefaults() {
-			// DisplayName.SetDefault("Hero Sword");
-			// Tooltip.SetDefault("Fires projectiles that home in");
 		}
 
 		public override void SetDefaults() {
@@ -18,7 +16,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 			Item.useAnimation = 40;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 15;
-			Item.value = Terraria.Item.sellPrice(0, 5, 0, 0);
+			Item.value = Item.sellPrice(0, 5, 0, 0);
 			Item.rare = 10;
 			Item.UseSound = SoundID.Item1;
 			Item.shoot = ModContent.ProjectileType<HeroSwordBeam>();

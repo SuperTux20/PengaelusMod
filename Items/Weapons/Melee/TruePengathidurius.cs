@@ -21,7 +21,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 			Item.useAnimation = 14;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 7f;
-			Item.value = Terraria.Item.sellPrice(0, 8, 25, 50);
+			Item.value = Item.sellPrice(0, 8, 25, 50);
 			Item.rare = ItemRarityID.Red;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;

@@ -7,8 +7,6 @@ using Terraria.ModLoader;
 namespace PengaelusMod.Items.Weapons.Melee {
 	public class AncientHeroSword : ModItem {
 		public override void SetStaticDefaults() {
-			// DisplayName.SetDefault("Ancient Hero Sword");
-			// Tooltip.SetDefault("");
 		}
 
 		public override void SetDefaults() {
@@ -20,7 +18,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 			Item.useAnimation = 20;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 7f;
-			Item.value = Terraria.Item.sellPrice(0, 3, 0, 0);
+			Item.value = Item.sellPrice(0, 3, 0, 0);
 			Item.rare = ItemRarityID.Blue;
 			Item.shootSpeed = 7f;
 			Item.UseSound = SoundID.Item1;
