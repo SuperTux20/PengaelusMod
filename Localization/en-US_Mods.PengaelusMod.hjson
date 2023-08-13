@@ -1,4 +1,8 @@
 Items: {
+	PrimaSword: {
+		DisplayName: Primaverum Sword
+		Tooltip: ""
+	}
 	Pengathidurius: {
 		DisplayName: Pengathidurius
 		Tooltip: The blade of a hero.
