@@ -45,7 +45,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 				Item.shootSpeed = 14f;
 				Item.useAnimation = 20;
 				Item.crit = 30;
-				Item.shoot = ModContent.ProjectileType<Pengathitile>();
+				Item.shoot = ModContent.ProjectileType<ActualBeam>();
 			}
 			return base.CanUseItem(player);
 		}

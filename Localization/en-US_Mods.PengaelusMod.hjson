@@ -3,6 +3,7 @@ Items: {
 		DisplayName: Primaverum Sword
 		Tooltip: ""
 	}
+
 	Pengathidurius: {
 		DisplayName: Pengathidurius
 		Tooltip: The blade of a hero.
@@ -54,4 +55,6 @@ Projectiles: {
 	AncientProj.DisplayName: Ancient Hero Beam
 	HeroSwordBeam.DisplayName: Hero Beam
 	LunarHeroSwordBeam.DisplayName: Lunar Hero Beam
+	ActualBeam.DisplayName: Actual Laser Beam
+	TerraPulse.DisplayName: Terra Pulse
 }

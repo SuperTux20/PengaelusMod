@@ -17,7 +17,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 			Item.useAnimation = 14;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.knockBack = 7f;
-			Item.value = Item.sellPrice(0, 8, 25, 50);
+			Item.value = Item.sellPrice(0, 40, 0, 0);
 			Item.rare = ItemRarityID.Red;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
@@ -32,10 +32,11 @@ namespace PengaelusMod.Items.Weapons.Melee {
 
 		public override void AddRecipes() {
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.TerraBlade);
-			recipe.AddIngredient(ModContent.ItemType<PrimaBar>(), 10);
-			recipe.AddIngredient(ItemID.Emerald, 10);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddIngredient(ItemID.ChlorophyteClaymore);
+			recipe.AddIngredient(ItemID.ChlorophyteSaber);
+			recipe.AddIngredient(ItemID.BrokenHeroSword);
+			recipe.AddIngredient(ModContent.ItemType<PrimaSword>());
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.Register();
 		}
 	}

@@ -27,6 +27,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.NightsEdge);
 			recipe.AddIngredient(ItemID.Excalibur);
+			recipe.AddIngredient(ModContent.ItemType<AncientHeroSword>());
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.Register();
 		}

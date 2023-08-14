@@ -29,24 +29,16 @@ namespace PengaelusMod.Items.Weapons.Melee {
 		public override bool AltFunctionUse(Player player) => true;
 		public override Vector2? HoldoutOffset() => new Vector2(-10, 0);
 		public override bool CanUseItem(Player player) {
-			if (player.altFunctionUse == 2) {
-				Item.useStyle = ItemUseStyleID.Swing;
-				Item.UseSound = SoundID.Item1;
-				Item.shootSpeed = 10f;
-				Item.shoot = ProjectileID.MagicMissile;
-			} else {
-				Item.damage = 400;
-				Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;
-				Item.staff[Item.type] = true;
-				Item.channel = true; // Channel so that you can hold the weapon [Important]
-				Item.useTime = 44;
-				Item.UseSound = SoundID.Item13;
-				Item.useStyle = ItemUseStyleID.Swing;
-				Item.shootSpeed = 14f;
-				Item.useAnimation = 20;
-				Item.crit = 30;
-				Item.shoot = ModContent.ProjectileType<Pengathitile>();
-			}
+			Item.damage = 400;
+			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;
+			Item.staff[Item.type] = true;
+			Item.useTime = 44;
+			Item.UseSound = SoundID.Item13;
+			Item.useStyle = ItemUseStyleID.Swing;
+			Item.shootSpeed = 14f;
+			Item.useAnimation = 20;
+			Item.crit = 30;
+			Item.shoot = ModContent.ProjectileType<Pengathitile>();
 			return base.CanUseItem(player);
 		}
 
@@ -65,7 +57,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 		public override void AddRecipes() {
 			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ModContent.ItemType<Pengathidurius>());
-			recipe.AddIngredient(ItemID.Zenith);
+			recipe.AddIngredient(ItemID.TerraBlade);
 			recipe.AddIngredient(ItemID.LargeEmerald);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.Register();

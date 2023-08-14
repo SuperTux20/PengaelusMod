@@ -13,7 +13,7 @@ namespace PengaelusMod.Items.Materials {
 		public override void SetDefaults() {
 			Item.width = 14;
 			Item.height = 12;
-			Item.value = 120000;
+			Item.value = Item.sellPrice(0, 0, 50, 0);
 			Item.rare = ItemRarityID.Purple;
 			Item.maxStack = 9999;
 		}
