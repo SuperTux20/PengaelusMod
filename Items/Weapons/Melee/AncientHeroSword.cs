@@ -39,7 +39,7 @@ namespace PengaelusMod.Items.Weapons.Melee {
 		public override void AddRecipes() {
 			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.BrokenHeroSword, 2);
-			recipe.AddIngredient(ItemID.HallowedBar, 10);
+			recipe.AddIngredient(ModContent.ItemType<HallowedBrass>(), 10);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.Register();
 		}
